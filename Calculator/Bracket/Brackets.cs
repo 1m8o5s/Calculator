@@ -6,8 +6,10 @@ namespace Calculator.Bracket
 {
     internal sealed class Brackets
     {
-        public static readonly char StartSign = '(';
-        public static readonly char StopSign = ')';
-        public static readonly int AdditionalPriority = 10;
+        public const char StartSign = '(';
+
+        public const char StopSign = ')';
+
+        public const int AdditionalPriority = 10;
     }
 }
