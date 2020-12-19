@@ -5,7 +5,7 @@ using Calculator.Operations;
 
 namespace Calculator
 {
-    class Orchestrator
+    internal sealed class Orchestrator
     {
         private OperationChooser _operationChooser;
         private Parser _parser;

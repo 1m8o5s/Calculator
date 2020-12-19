@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Calculator
 {
-    class Parser
+    internal sealed class Parser
     {
         private List<Operation> _operations;
 
@@ -37,6 +37,7 @@ namespace Calculator
         {
             get => new List<double>(_operands);
         }
+
         public void DisassembleOperations()
         {
             StringBuilder number = new StringBuilder();
