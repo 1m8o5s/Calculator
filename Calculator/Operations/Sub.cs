@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculator.Operations
 {
-    internal class Sub : Operation
+    internal sealed class Sub : Operation
     {
         public override int Priority => 1;
 

@@ -6,13 +6,15 @@ using Calculator.Operations;
 
 namespace Calculator
 {
-    class ParsersValidator
+    internal sealed class ParsersValidator
     {
         private OperationChooser _operationChooser { get; }
+
         public ParsersValidator(OperationChooser operationChooser)
         {
             _operationChooser = operationChooser;
         }
+
         public void ValidateNumberAfterBrackets(char last_symbol)
         {
             if (last_symbol == Brackets.StopSign)
@@ -20,6 +22,7 @@ namespace Calculator
                 throw new Exception("Program dont support writing numbers after brackets");
             }
         }
+
         public void ValidateNumberBeforeBrackets(char last_symbol)
         {
             if (char.IsDigit(last_symbol))
@@ -27,6 +30,7 @@ namespace Calculator
                 throw new Exception("Program dont support writing numbers before brackets");
             }
         }
+
         public void ValidateOperatorInsideBrackets(char last_symbol)
         {
             if (_operationChooser.SupportingOpperation(last_symbol))
@@ -34,6 +38,7 @@ namespace Calculator
                 throw new Exception("Program dont support writing operators after brackets");
             }
         }
+
         public void ValidateOperatorNearBracetsOrOtherOperator(char last_symbol)
         {
             if (_operationChooser.SupportingOpperation(last_symbol) || last_symbol == Brackets.StartSign)
@@ -41,6 +46,7 @@ namespace Calculator
                 throw new Exception("Program dont support operations without number operands");
             }
         }
+
         public void ValidateDontSupportSymbol(char last_symbol)
         {
             if (last_symbol != default)
