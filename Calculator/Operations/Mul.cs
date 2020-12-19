@@ -7,7 +7,6 @@ namespace Calculator.Operations
     internal class Mul : Operation
     {
         public override int Priority => 2;
-        public override char Sign => '*';
 
         public override int AdditionalPriority { get; set; }
 

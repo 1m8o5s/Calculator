@@ -8,7 +8,6 @@ namespace Calculator.Operations
     {
         public override int Priority => 2;
 
-        public override char Sign => '~';
         public override int AdditionalPriority { get; set; }
 
         public override double Execute(List<double> operands)
