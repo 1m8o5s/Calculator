@@ -7,10 +7,10 @@ namespace Calculator.Operations
     internal sealed class OperationChooser
     {
         private Dictionary<char, Func<Operation>> _operationsContainer;
-        public const Operation NULL = new NotSupportedOperation();
+        public static Operation NULL = new NotSupportedOperation();
         public OperationChooser()
         {
-            operationsContainer = new Dictionary<char, Func<Operation>>
+            _operationsContainer = new Dictionary<char, Func<Operation>>
             {
                 {
                     '+', () => new Add()
