@@ -6,11 +6,11 @@ namespace Calculator.Operations
 {
     internal sealed class OperationChooser
     {
-        Dictionary<char, Func<Operation>> op;
+        private Dictionary<char, Func<Operation>> _operationsContainer;
         public static Operation NULL = new NotSupportedOperation();
         public OperationChooser()
         {
-            op = new Dictionary<char, Func<Operation>>
+            _operationsContainer = new Dictionary<char, Func<Operation>>
             {
                 {
                     '+', () => new Add()
@@ -25,7 +25,7 @@ namespace Calculator.Operations
                     '*', () => new Mul()
                 },
                 {
-                    '~', () => new Pow()
+                    '^', () => new Pow()
                 }
 
             };
@@ -35,14 +35,14 @@ namespace Calculator.Operations
         {
             if (SupportingOpperation(operation))
             {
-                return op[operation].Invoke();
+                return _operationsContainer[operation].Invoke();
             }
             return NULL;
         }
 
         public bool SupportingOpperation(char operation)
         {
-            return op.ContainsKey(operation);
+            return _operationsContainer.ContainsKey(operation);
         }
     }
 }

@@ -10,10 +10,15 @@ namespace Calculator
     class Parser
     {
         private List<Operation> _operations;
+
         private List<double> _operands;
+
         private OperationChooser _operationChooser;
+
         private ParsersValidator _validator;
+
         private string _expression;
+
         public Parser(string expression, OperationChooser operationChooser)
         {
             _expression = expression;
@@ -22,10 +27,12 @@ namespace Calculator
             _operationChooser = operationChooser;
             _validator = new ParsersValidator(_operationChooser);
         }
+
         public List<Operation> Operations
         {
             get=>new List<Operation>(_operations);
         }
+
         public List<double> Operands
         {
             get => new List<double>(_operands);
